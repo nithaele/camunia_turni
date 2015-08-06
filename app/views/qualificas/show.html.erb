@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Qualifica -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Qualifica %></h1>
+</div>
 
-<p>
-  <strong>Qualifica:</strong>
-  <%= @qualifica.qualifica %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:qualifica) %></dt>
+      <dd><pre class="prettyprint"><%= @qualifica.qualifica %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @qualifica.user %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              qualificas_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_qualifica_path(@qualifica), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              qualifica_path(@qualifica),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_qualifica_path(@qualifica) %> |
-<%= link_to 'Back', qualificas_path %>
