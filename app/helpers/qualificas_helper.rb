@@ -1,0 +1,2 @@
+module QualificasHelper
+end
