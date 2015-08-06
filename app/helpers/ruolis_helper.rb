@@ -1,0 +1,2 @@
+module RuolisHelper
+end

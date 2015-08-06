@@ -1,0 +1,27 @@
+<h1>Listing ruolis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ruolo</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ruolis.each do |ruoli| %>
+      <tr>
+        <td><%= ruoli.ruolo %></td>
+        <td><%= ruoli.user %></td>
+        <td><%= link_to 'Show', ruoli %></td>
+        <td><%= link_to 'Edit', edit_ruoli_path(ruoli) %></td>
+        <td><%= link_to 'Destroy', ruoli, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ruoli', new_ruoli_path %>
